@@ -1,0 +1,73 @@
+/* Alpha Delulu — shared styles (Violet Dream brand)
+   Colours: ink #141414 · cream #FBFAF7 / #F4F2EC · violet #7B5CFF · deep violet #5A38E6
+   Fonts: Bricolage Grotesque (headings, body) · Instrument Serif italic (accent words) */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #FBFAF7; color: #141414; font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+img, svg { max-width: 100%; }
+a { color: #5A38E6; }
+a:hover { color: #3F22B8; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #B7A6FF; outline-offset: 2px; }
+section[id] { scroll-margin-top: 96px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251, 250, 247, 0.96);
+  border-bottom: 1px solid #E6E2D8;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+}
+.site-header__inner {
+  max-width: 1200px; margin: 0 auto; padding: 12px 24px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+}
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; color: #141414; text-decoration: none; }
+.brand:hover { color: #141414; }
+.brand__word { display: flex; align-items: baseline; gap: 5px; line-height: 1; }
+.brand__alpha { font-size: 24px; font-weight: 800; letter-spacing: -0.04em; }
+.brand__delulu { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 29px; color: #6A47F0; }
+
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.site-nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+  border-radius: 999px; color: #141414; font-size: 16px; font-weight: 500; text-decoration: none;
+}
+.site-nav a:hover { background: #F4F2EC; color: #141414; }
+.site-nav a[aria-current="page"] { background: #EDE8FF; color: #4B2FD6; font-weight: 700; }
+.site-nav a.nav-cta { margin-left: 8px; padding: 0 20px; background: #5A38E6; color: #FFFFFF; font-weight: 700; }
+.site-nav a.nav-cta:hover { background: #3F22B8; color: #FFFFFF; }
+
+.menu-btn { display: none; }
+
+@media (max-width: 900px) {
+  .menu-btn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
+    border: 1.5px solid #141414; border-radius: 999px; background: #FFFFFF; color: #141414;
+    font: 600 16px 'Bricolage Grotesque', system-ui, sans-serif; cursor: pointer;
+  }
+  html:not(.js) .menu-btn { display: none; }
+  .site-nav { width: 100%; flex-direction: column; align-items: stretch; gap: 2px; padding: 4px 0 12px; }
+  .js .site-nav { display: none; }
+  .js .site-nav.is-open { display: flex; }
+  .site-nav a { font-size: 18px; }
+  .site-nav a.nav-cta { margin: 8px 0 0; justify-content: center; min-height: 52px; }
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary:hover { background: #3F22B8 !important; }
+
+/* ---------- Contact form chips ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 16px;
+  border: 1.5px solid #CFC8BA; border-radius: 999px; background: #FFFFFF; color: #33312D;
+  font: 500 15px 'Bricolage Grotesque', system-ui, sans-serif; cursor: pointer;
+}
+.chip svg { display: none; }
+.chip:hover { border-color: #7B5CFF; }
+.chip[aria-pressed="true"] { border-color: #5A38E6; background: #EDE8FF; color: #3F22B8; font-weight: 700; }
+.chip[aria-pressed="true"] svg { display: inline; }
+input:focus, textarea:focus { outline: 3px solid #B7A6FF; outline-offset: 2px; border-color: #5A38E6 !important; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
